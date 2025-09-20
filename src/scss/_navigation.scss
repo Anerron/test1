@@ -52,6 +52,13 @@
                 }
             }
         }
+        
+        .dropdown-item {
+            &:hover {
+                color: #42b549;
+                transition: 0.4s;
+            }
+        }
     }
     
     .login {
