@@ -1,22 +1,23 @@
 .info {
+    position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: row;
     background: url(../images/blue.jpg) center center/cover no-repeat;
-    width: 100%;
-    height: 612px;
+    min-height: 612px;
+
     
     .wrapper__info {
         margin-bottom: 30px;
-        margin-left: 244px;
         text-align: center;
+        margin-left: 16vw;
     }
 
     .wrapper__icons {
         display: flex;
         flex-direction: column;
-        margin-left: 121px;
+        margin-left: 175px;
         justify-content: space-between;
         gap: 103px;
     }
