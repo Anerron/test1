@@ -1,0 +1,111 @@
+.product {
+    min-height: 482px;
+
+    .container {
+        max-width: 100%;
+        padding-right: 136px;
+    }
+
+    &__inner {
+        display: flex;
+        position: relative;
+        height: 490px;
+    }
+    
+    &__slider {
+        flex: 0 0 730px;
+        width: 730px;
+        .slick-prev,
+        .slick-next {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: none;
+            z-index: 1;
+            &:hover {
+                width: 53px;
+                height: 53px;
+                transition: 0.5s;
+            }        
+            // УБИРАЕМ ДЕФОЛТНУЮ СТРЕЛКУ
+            &:before {
+                content: '' !important;
+                display: none !important;
+            }
+            
+            svg {
+                width: 50px;
+                height: 50px;
+                fill: grey;
+                pointer-events: none;
+            }
+        }
+        
+        .slick-prev {
+            transform: translate(730px,130px);
+
+        }
+        
+        .slick-next {
+            transform: translate(28px,130px);
+        }
+    }
+
+    &__text {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        align-items: end;
+
+        .slick-dots {
+            width: auto;
+            display: flex;
+            text-align: right;
+            margin-bottom: 105px;
+            li {
+                button {
+                    &:before {
+                        font-size: 60px;
+                    }
+                }
+            }
+        }
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        margin-top: 60px;
+        font-family: "Open Sans";
+        font-size: 25px;
+        line-height: 1.2;
+        letter-spacing: 0.63px;
+        text-align: right;
+        color: #3c3c3c;
+        span {
+            display: inline-block;
+            font-size: 55px;
+            font-weight: 800;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            margin-right: -6.13px;
+        }
+    }
+
+    &__description {
+        margin-top: 5px;
+        font-family: "Open Sans";
+        font-size: 16px;
+        font-weight: 300;
+        color: #808080;
+    }
+
+    &__subtitle {
+        text-align: right;
+    }
+
+    &__desr {
+        text-align: justify;
+    }
+}
