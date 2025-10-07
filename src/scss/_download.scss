@@ -1,5 +1,47 @@
 .download {
     .container {
+        width: 100%;
+        max-width: 100%;
+        margin: 0px;
+        padding-right: 134px;
+        padding-top: 224px;
         min-height: 670px;
+        background: url('../images/phone_blue.jpg') center center/cover no-repeat;
+
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+    }
+
+    &__title {
+        font-family: "Open Sans";
+        font-size: 35px;
+        color: #fff;
+    }
+
+    &__subtitle {
+        font-family: "Open Sans";
+        margin-top: 10px;
+        font-size: 16px;
+        text-align: right;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    &__links {
+        display: flex;
+        flex-direction: row;
+        margin-top: 56px;
+        justify-content: space-between;
+        gap: 30px;
+    }
+
+    &__app-store, &__google-play {
+        img {
+            width: 200px;
+            height: 65pxs;
+        }
     }
 }
