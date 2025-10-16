@@ -1,8 +1,64 @@
 .news {
     .container {
-        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 45px;
         width: 100%;
         max-width: 100%;
-        min-height: 674px;
+        padding: 90px 142px 0px 143px;
+        min-height: 683px;
+    }
+
+    &__block {
+        position: relative; 
+        padding: 6px 7px 15px 8px;
+        flex: 1 1 370px; // flex-grow | flex-shrink | flex-basis
+        min-width: 280px; // минимальная ширина блока
+        max-width: 370px; // максимальная ширина блока
+        height: auto; // делаем высоту автоматической
+        min-height: 510px; // минимальная высота
+        box-shadow: 0px 6px 12px 0 rgba(32, 33, 39, 0.08);
+        background-color: #fff;
+    }
+
+    &__title {
+        font-family: "Open Sans";
+        font-size: 16px;
+        font-weight: bold;
+        text-align: left;
+        margin-top: 36px;
+        color: #3c3c3c;
+    }
+
+    &__description {
+        font-family: "Open Sans";
+        font-size: 14px;
+        font-weight: normal;
+        text-align: justify;
+        margin-top: 10px;
+        color: #7f7f7f;
+    }
+
+    &__date {
+        position: absolute; 
+        bottom: 15px; 
+        left: 8px; 
+        font-family: "Open Sans";
+        font-size: 12px;
+        font-weight: normal;
+        color: #a6a6a6;
+        margin: 0; 
+    }
+
+    &__comment {
+        position: absolute; 
+        bottom: 15px; 
+        right: 7px; 
+        font-family: "Open Sans";
+        font-size: 12px;
+        font-weight: normal;
+        color: #999;
+        margin: 0; 
     }
 }

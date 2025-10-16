@@ -77,6 +77,18 @@
         }
     }
 
+    .news {
+        .container {
+            display: flex !important;
+            flex-direction: column !important;
+            padding-top: 90px !important;
+            padding-right: 0 !important;
+            padding-left: 0 !important;
+            justify-content: center !important;
+            align-items: center;
+        }
+    }
+
 }
 
 @media (max-width: 991px) {
