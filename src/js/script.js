@@ -30,12 +30,57 @@ $(document).ready(function(){
 
     //Код модальных окон
     $('[data-modal=login__main]').on('click', function() {
+        // убрать активные состояния у всех форм перед показом нужной
+        $('.login-form, .contacts-form').removeClass('active').hide();
         $('.overlay').addClass('active').fadeIn();
+        $('.login-form').addClass('active').fadeIn();
     });
 
     $('.login-form__cross').on('click', function() {
         $('.overlay').fadeOut("slow", function() {
             $(this).removeClass('active');
+            // при закрытии убрать класс active у форм
+            $('.login-form, .contacts-form').removeClass('active').hide();
         });
+    });
+
+    $('[data-modal=contacts]').on('click', function (e) {
+        e.preventDefault();
+        var $form = $('.contacts__forms').first();
+        if (!$form.length || !$form.valid()) {
+            $form.validate();
+            return;
+        }
+        $('.login-form, .contacts-form').removeClass('active').hide();
+        $('.overlay').addClass('active').fadeIn();
+        $('.contacts-form').addClass('active').fadeIn();
+    });
+
+    $('.contacts-form__cross').on('click', function() {
+        $('.overlay').fadeOut("slow", function() {
+            $(this).removeClass('active');
+            $('.login-form, .contacts-form').removeClass('active').hide();
+        });
+    });
+
+    //Код мэйлера
+    $('form').submit(function (e) {
+        e.preventDefault();
+
+        if (!$(this).valid()) {
+            return;
+        }
+
+        $.ajax({
+            type: 'POST',
+            url: 'mailer/smar.php',
+            data: $(this).serialize()
+        }).done(function () {
+            $(this).find('input').val('');
+
+
+            $('form').trigger('reset');
+        });
+        return false;
     });
 });

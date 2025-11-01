@@ -14,11 +14,15 @@
     }
 
     .login-form {
+        display: none;
         padding-top: 25px;
         position: relative;
         width: 400px;
         height: 300px;
         background-color: #1E90FF;
+        &.active {
+            display: block;
+        }
 
         &__forms {
             display: flex;
@@ -71,6 +75,42 @@
             font-size: 22px;
             font-family: "Open Sans";
             font-weight: 500;
+            color: white;
+            text-align: center;
+        }
+    }
+
+    .contacts-form {
+        display: none;
+        width: 350px;
+        height: 100px;
+        background-color: #1E90FF;
+        &.active {
+            display: block;
+        }
+
+        &__cross {
+            position: absolute;
+            right: 554px;
+            top: 275px;
+            font-size: 35px;
+            color: #1E90FF;
+            cursor: pointer;
+        }
+
+        &__title {
+            margin-top: 15px;
+            font-size: 20px;
+            font-family: "Open Sans";
+            font-weight: 500;
+            color: white;
+            text-align: center;
+        }
+
+        &__subtitle {
+            font-size: 18px;
+            font-family: "Open Sans";
+            font-weight: 400;
             color: white;
             text-align: center;
         }
