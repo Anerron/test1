@@ -8,7 +8,7 @@
     <title>MMG</title>
 </head>
 <body>
-    <header class="navigation">
+    <header class="navigation" id="up">
         <img src="images/logo.png" alt="">
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
@@ -108,10 +108,10 @@
         </div>
     </section>
 
-    <section class="advantages">
+    <section class="advantages wow animate__animated animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0.25s">
         <div class="container">
             <div class="advantages__wrapper">
-                <div class="advantages__block">
+                <div class="advantages__block wow animate__animated animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0.25s">
                     <div class="advantages__icon">
                         <img src="icons/reload.png" alt="">
                     </div>
@@ -120,7 +120,7 @@
                         <div class="advantages__description">Administrators can log in the website to manage employees and make employee attendance reports</div>
                     </div>
                 </div>
-                <div class="advantages__block">
+                <div class="advantages__block wow animate__animated animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0.25s">
                     <div class="advantages__icon">
                         <img src="icons/inbox.png" alt="">
                     </div>
@@ -129,7 +129,7 @@
                         <div class="advantages__description">You do not have to buy time attendance machines at high prices, instead of that, you can deploy the system easily just with a beacon</div>
                     </div>
                 </div>
-                <div class="advantages__block">
+                <div class="advantages__block wow animate__animated animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0.25s">
                     <div class="advantages__icon">
                         <img src="icons/clock.png" alt="">
                     </div>
@@ -144,14 +144,14 @@
         </div>
     </section>
 
-    <section class="download">
+    <section class="download wow animate__animated animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0.25s">
         <div class="container">
             <div class="download__wrapper">
-                <div class="download__title"><strong>Download</strong> to get started</div>
-                <div class="download__subtitle">
+                <div class="download__title wow animate__animated animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0.25s"><strong>Download</strong> to get started</div>
+                <div class="download__subtitle wow animate__animated animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0.25s">
                 A better way to present your apps, Now available on <br> the App Store and Play Store!
                 </div>
-                <div class="download__links">
+                <div class="download__links wow animate__animated animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0.25s">
                     <div class="download__google-play"><a href="#"><img src="images/get-it-on-google-play-2016-seeklogo.png" alt=""></a></div>
                     <div class="download__app-store"><a href="#"><img src="images/download-on-the-app-store-flat-badge-seeklogo.png" alt=""></a></div>
                 </div>
@@ -159,7 +159,7 @@
         </div>
     </section>
 
-    <section class="news">
+    <section class="news wow animate__animated animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0.25s">
         <div class="container">
             <div class="news__block">
                 <img src="images/post1.jpg" alt="" class="news__image">
@@ -187,21 +187,21 @@
         </div>
     </section>
 
-    <section class="contacts">
+    <section class="contacts wow animate__animated animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0.25s">
         <div class="container">
-            <div class="contacts__title"><strong>Contact</strong> with us</div>
-            <div class="contacts__subtitle">Contact us by phone or gmail to order new services, track orders and get <br> customer service or tech support.</div>
-            <form class="contacts__forms" action="#">
+            <div class="contacts__title wow animate__animated animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0.25s"><strong>Contact</strong> with us</div>
+            <div class="contacts__subtitle wow animate__animated animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0.25s">Contact us by phone or gmail to order new services, track orders and get <br> customer service or tech support.</div>
+            <form class="contacts__forms wow animate__animated animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0.25s" action="#">
                 <input name="name" placeholder="Your Name" type="text">
                 <input name="email" placeholder="Email Adress" type="email">
-                <textarea name="message" style="resize: none;" name="" id="" placeholder="Message..."></textarea>
+                <textarea name="message" style="resize: none;" id="" placeholder="Message..."></textarea>
 
-                <button data-modal="contacts">Send Message</button>
+                <button type="submit">Send Message</button>
             </form>
         </div>
     </section>
 
-    <footer class="information">
+    <footer class="information wow animate__animated animate__fadeInUp" data-wow-duration="2s" data-wow-delay="0.25s">
         <div class="container">
             <div class="information__info">
                 <div class="information__company">
@@ -253,6 +253,10 @@
         </div>
     </div>
 
+    <a href="#up" class="pageup">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#74C0FC" d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM331.3 188.7L435.3 292.7C439.9 297.3 441.2 304.2 438.8 310.1C436.4 316 430.5 320 424 320L368 320L368 416C368 433.7 353.7 448 336 448L304 448C286.3 448 272 433.7 272 416L272 320L216 320C209.5 320 203.7 316.1 201.2 310.1C198.7 304.1 200.1 297.2 204.7 292.7L308.7 188.7C314.9 182.5 325.1 182.5 331.3 188.7z"/></svg>
+    </a>
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -260,6 +264,10 @@
     <script src="js/slick.min.js"></script>
     <script src="js/jquery.validate.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
     <script src="js/script.js"></script>
 </body>
 </html>

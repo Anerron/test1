@@ -1,8 +1,12 @@
+html {
+    scroll-behavior: smooth;
+}
 @import 'navigation';
 @import 'info';
 @import '../css/bootstrap.min.css';
 @import '../css/slick.css';
 @import '../css/slick-theme.css';
+@import '../css/animate.min.css';
 @import 'product';
 @import 'blocks/buttons';
 @import 'media';
@@ -12,3 +16,5 @@
 @import 'contacts';
 @import 'information';
 @import 'overlay';
+@import 'blocks/up';
+@import 'animations';

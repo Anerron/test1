@@ -63,24 +63,44 @@ $(document).ready(function(){
         });
     });
 
-    //Код мэйлера
-    $('form').submit(function (e) {
+    //Код мэйлера (не работает)
+    console.log('Form handler initialized');
+    console.log('Forms found:', $('form').length);
+    
+    // Обработчик для формы с классом contacts__forms
+    $('.contacts__forms').on('submit', function(e) {
         e.preventDefault();
+        console.log('✅ Form submitted!');
+        var $form = $(this);
 
-        if (!$(this).valid()) {
-            return;
-        }
+        // логируем сериализованные данные перед отправкой
+        var serialized = $form.serialize();
+        console.log('Form serialized:', serialized);
+
+        // используем абсолютный путь на случай, если корень домена не тот
+        var ajaxUrl = window.location.origin + '/mailer/smart.php';
+        console.log('Posting to:', ajaxUrl);
 
         $.ajax({
             type: 'POST',
-            url: 'mailer/smar.php',
-            data: $(this).serialize()
-        }).done(function () {
-            $(this).find('input').val('');
+            url: ajaxUrl,
+            data: serialized,
+            dataType: 'json',
+            timeout: 10000
+        })
+        .done(function(resp) { console.log('Server response:', resp); /* ...existing code... */ })
+        .fail(function(jqXHR, textStatus, errorThrown) { console.error('AJAX error', textStatus, jqXHR.status, jqXHR.responseText); })
+        .always(function() { /* ...existing code... */ });
 
-
-            $('form').trigger('reset');
-        });
         return false;
+    });
+
+    //Кнопка вверх
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 1600) {
+            $('.pageup').fadeIn();
+        } else {
+            $('.pageup').fadeOut();
+        }
     });
 });

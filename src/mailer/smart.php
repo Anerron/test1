@@ -1,44 +1,27 @@
-<?php 
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-$name = $_POST['name'];
-$phone = $_POST['phone'];
-$email = $_POST['email'];
+// Создаем debug.log
+$logFile = __DIR__ . '/debug.log';
+file_put_contents($logFile, date('Y-m-d H:i:s') . " - Request received\n", FILE_APPEND);
+file_put_contents($logFile, "POST data: " . print_r($_POST, true) . "\n", FILE_APPEND);
 
-require_once('phpmailer/PHPMailerAutoload.php');
-$mail = new PHPMailer;
-$mail->CharSet = 'utf-8';
+header('Content-Type: application/json; charset=utf-8');
 
-// $mail->SMTPDebug = 3;                               // Enable verbose debug output
+$name = isset($_POST['name']) ? trim($_POST['name']) : '';
+$email = isset($_POST['email']) ? trim($_POST['email']) : '';
+$message = isset($_POST['message']) ? trim($_POST['message']) : '';
 
-$mail->isSMTP();                                      // Set mailer to use SMTP
-$mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
-$mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = '';                 // Наш логин
-$mail->Password = '';                           // Наш пароль от ящика
-$mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
-$mail->Port = 465;                                    // TCP port to connect to
- 
-$mail->setFrom('', 'Pulse');   // От кого письмо 
-$mail->addAddress('');     // Add a recipient
-//$mail->addAddress('ellen@example.com');               // Name is optional
-//$mail->addReplyTo('info@example.com', 'Information');
-//$mail->addCC('cc@example.com');
-//$mail->addBCC('bcc@example.com');
-//$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-//$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
-$mail->isHTML(true);                                  // Set email format to HTML
-
-$mail->Subject = 'Данные';
-$mail->Body    = '
-		Пользователь оставил данные <br> 
-	Имя: ' . $name . ' <br>
-	Номер телефона: ' . $phone . '<br>
-	E-mail: ' . $email . '';
-
-if(!$mail->send()) {
-    return false;
-} else {
-    return true;
+// Проверка данных
+if (empty($name) || empty($email) || empty($message)) {
+    file_put_contents($logFile, "Error: Empty fields\n", FILE_APPEND);
+    echo json_encode(['success' => false, 'error' => 'Заполните все поля']);
+    exit;
 }
 
+// ВРЕМЕННО: просто возвращаем успех (без отправки почты)
+file_put_contents($logFile, "Success response sent\n", FILE_APPEND);
+echo json_encode(['success' => true]);
+exit;
 ?>
