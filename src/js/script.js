@@ -44,13 +44,16 @@ $(document).ready(function(){
         });
     });
 
-    $('[data-modal=contacts]').on('click', function (e) {
+    $('.send').on('click', function (e) {
         e.preventDefault();
         var $form = $('.contacts__forms').first();
         if (!$form.length || !$form.valid()) {
             $form.validate();
             return;
         }
+
+        $('form').trigger('reset');
+
         $('.login-form, .contacts-form').removeClass('active').hide();
         $('.overlay').addClass('active').fadeIn();
         $('.contacts-form').addClass('active').fadeIn();
